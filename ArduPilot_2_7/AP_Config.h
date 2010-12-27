@@ -42,7 +42,7 @@ These Flight Modes can be changed either here or directly in events.pde
 #define SHIELD_VERSION 	1		// Old (red) shield versions is 0, the new (blue) shield version is 1, -1 = no shield
 #define AIRSPEED_SENSOR 0 		// (boolean) Do you have an airspeed sensor attached? 1= yes, 0 = no.
 
-#define GPS_PROTOCOL 	4		// 0 = NMEA
+#define GPS_PROTOCOL 	1		// 0 = NMEA
 								// 1 = SIRF, 
 								// 2 = uBlox
 								// 3 = ArduIMU
@@ -60,7 +60,7 @@ These Flight Modes can be changed either here or directly in events.pde
 /***************************************/
 //Thermopile sensors:
 #define ENABLE_Z_SENSOR 1  		// 0 = no Z sensor, 1 = use Z sensor (no Z requires field calibration with each flight)
-#define XY_SENSOR_LOCATION 0 	// XY Thermopiles Sensor placement
+#define XY_SENSOR_LOCATION 1 	// XY Thermopiles Sensor placement
 								// Mounted right side up:	0 = cable in front, 1 = cable behind
 								// Mounted upside down: 	2 = cable in front, 3 = cable behind
 #define PITCH_TRIM 0			// deg * 100 : allows you to offset bad IR sensor placement

@@ -40,7 +40,7 @@ These Flight Modes can be changed either here or directly in events.pde
 /***************************************/
 //HARDWARE CONFIGURATION
 #define SHIELD_VERSION 	1		// Old (red) shield versions is 0, the new (blue) shield version is 1, -1 = no shield
-#define AIRSPEED_SENSOR 0 		// (boolean) Do you have an airspeed sensor attached? 1= yes, 0 = no.
+#define AIRSPEED_SENSOR 1 		// (boolean) Do you have an airspeed sensor attached? 1= yes, 0 = no.
 
 #define GPS_PROTOCOL 	1		// 0 = NMEA
 								// 1 = SIRF, 
@@ -55,6 +55,7 @@ These Flight Modes can be changed either here or directly in events.pde
 								// 2 = Ardupilot Binary(not implemented), 
 								// 3 = Xplane
 								// 5 = Jason's GCS, 
+                                                                // 6 = Duncan's Comma delimited text
 								// -1 = no GCS (no telemtry output)
 
 /***************************************/
@@ -72,7 +73,7 @@ These Flight Modes can be changed either here or directly in events.pde
 /***************************************/
 //Battery:
 #define BATTERY_EVENT 0 		// (boolean) 0 = don't read battery, 1 = read battery voltage (only if you have it wired up!)
-#define INPUT_VOLTAGE 5200.0 	// (Millivolts) voltage your power regulator is feeding your ArduPilot to have an accurate pressure and battery level readings. (you need a multimeter to measure and set this of course)
+#define INPUT_VOLTAGE 5000.0 	// (Millivolts) voltage your power regulator is feeding your ArduPilot to have an accurate pressure and battery level readings. (you need a multimeter to measure and set this of course)
 
 
 
@@ -96,14 +97,14 @@ These Flight Modes can be changed either here or directly in events.pde
 #define CH4_MIN 1000 			// (Microseconds) Range of Rudder
 #define CH4_MAX 2000 			// (Microseconds)
 #define ADVERSE_ROLL 0.2		// adverse roll correction based on Aileron input 
-#define CH4_RUDDER 1			// 1 = Use CH4 for rudder, 0 = use CH4 for something else - like an egg drop.
+#define CH4_RUDDER 0			// 1 = Use CH4 for rudder, 0 = use CH4 for something else - like an egg drop.
 
 #define PAYLOAD_CLOSED 45		// -45 to 45 degrees max
 #define PAYLOAD_OPEN -45		// -45 to 45 degrees max
 
 /***************************************/
 // AIRFRAME SETTINGS
-#define MIXING_MODE 0			//Servo mixing mode 0 = Normal, 1 = Elevons (or v tail)
+#define MIXING_MODE 1			//Servo mixing mode 0 = Normal, 1 = Elevons (or v tail)
 
 // NOTE - IF USING ELEVONS, 1-2 AND 1-3 SHOULD BE 1
 #define REVERSE_ROLL 1			// To reverse roll, PUT -1 to reverse it

@@ -1,0 +1,59 @@
+cmake_minimum_required(VERSION 2.6)
+
+SET (PROJECT_NAME ags)
+
+PROJECT (${PROJECT_NAME})
+
+SET ( CMAKE_BUILD_TYPE Debug )
+
+FIND_PACKAGE (Qt4 REQUIRED)
+
+SET ( SRCS
+	main.cpp
+    )
+
+SET ( HDRS
+	
+    )
+
+SET ( UIS
+	ui/mainWindow.ui
+    )
+
+QT4_WRAP_UI (UI_HDRS ${UIS} )
+
+QT4_WRAP_CPP ( HDRS_MOC ${HDRS} )
+
+INCLUDE (
+	${QT_USE_FILE}
+)
+
+ADD_DEFINITIONS(
+	${QT_DEFINITIONS}
+)
+
+INCLUDE_DIRECTORIES(	
+	${Boost_INCLUDE_DIRS}
+	${BASE_DIR}/internal/include/
+	${BASE_DIR}/3rdparty/include/
+	${CMAKE_BINARY_DIR}
+)	
+
+
+LINK_DIRECTORIES(
+	${Boost_LIBRARY_DIRS}
+	${BASE_DIR}/3rdparty/lib/
+)
+
+
+ADD_EXECUTABLE( ${PROJECT_NAME} ${SRCS} ${HDRS_MOC} ${UI_HDRS} )
+
+
+TARGET_LINK_LIBRARIES ( ${PROJECT_NAME}
+	${Boost_LIBRARIES}
+	${QT_LIBRARIES}
+    )
+
+
+
+
